@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROASTUBE — A YouTube roast gépezete</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&display=swap');
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#070707;color:#f7f7f7;font-family:Inter,system-ui,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+header{position:sticky;top:0;z-index:5;background:rgba(7,7,7,.78);backdrop-filter:blur(16px);border-bottom:1px solid #252525}
+.nav{max-width:1120px;margin:auto;height:70px;padding:0 22px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:21px;font-weight:900;letter-spacing:-1px}.logo b{color:#ff2b2b}.nav a{color:#aaa;text-decoration:none;margin-left:25px;font-size:13px}.nav a:hover{color:white}
+.hero{max-width:1120px;margin:auto;padding:105px 22px 90px;position:relative}.hero:after{content:"";position:absolute;width:500px;height:500px;background:#ff1717;filter:blur(180px);opacity:.12;right:-200px;top:20px;z-index:-1}
+.badge{display:inline-block;border:1px solid #3b3b3b;background:#111;border-radius:999px;padding:8px 12px;color:#bbb;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+h1{font-size:clamp(58px,10vw,120px);line-height:.82;letter-spacing:-.075em;margin:24px 0 28px;max-width:900px}h1 span{color:#ff3131;text-shadow:0 0 35px rgba(255,40,40,.2)}
+.hero p{font-size:18px;color:#9e9e9e;max-width:650px;line-height:1.65}.buttons{display:flex;gap:10px;margin-top:30px;flex-wrap:wrap}
+button,.btn{font:inherit;border:0;border-radius:11px;padding:14px 19px;font-size:13px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-block}.primary{background:#ff2d2d;color:#fff}.primary:hover{background:#ff4848;transform:translateY(-2px)}.secondary{background:#161616;color:#ddd;border:1px solid #303030}
+section{max-width:1120px;margin:auto;padding:80px 22px}.head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}.head h2{font-size:42px;letter-spacing:-.05em;margin:0}.head p{color:#888;max-width:420px}
+.roastbox{background:#101010;border:1px solid #2c2c2c;border-radius:24px;padding:25px;box-shadow:0 25px 80px #0008}.inputs{display:grid;grid-template-columns:1fr auto;gap:10px}input{width:100%;padding:16px;background:#080808;color:#fff;border:1px solid #333;border-radius:10px;outline:none}input:focus{border-color:#ff3030}
+.result{margin-top:18px;display:none;padding:20px;border-radius:14px;background:#171717;border-left:4px solid #ff3030}.result strong{font-size:19px}.result p{color:#aaa;margin-bottom:0}.meter{margin-top:20px;height:10px;background:#242424;border-radius:20px;overflow:hidden}.meter i{display:block;height:100%;width:0;background:#ff3030;transition:width .7s}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid #292929;background:#0e0e0e;border-radius:18px;padding:22px;min-height:180px}.icon{font-size:30px}.card h3{margin:20px 0 8px}.card p{margin:0;color:#888;line-height:1.55;font-size:13px}
+.rank{display:grid;grid-template-columns:auto 1fr auto;gap:15px;align-items:center;padding:17px 0;border-bottom:1px solid #242424}.rank:last-child{border:0}.num{font-weight:900;color:#555;font-size:13px}.name{font-weight:800}.bar{height:8px;background:#202020;border-radius:20px;margin-top:8px;overflow:hidden}.bar i{display:block;height:100%;background:#ff3030}.score{font-weight:900;color:#ff4a4a}
+.quote{margin-top:20px;padding:24px;border:1px solid #2a2a2a;background:linear-gradient(135deg,#151515,#0b0b0b);border-radius:18px;color:#bbb}.quote b{color:white}
+footer{border-top:1px solid #222;padding:30px 22px;color:#666;font-size:12px;text-align:center}
+@media(max-width:700px){.nav a{display:none}.hero{padding-top:75px}.cards{grid-template-columns:1fr}.inputs{grid-template-columns:1fr}.head{display:block}.head p{margin-top:12px}h1{font-size:62px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">ROAST<span style="color:#ff2d2d">UBE</span> 🔥</div><nav><a href="#roast">Roast</a><a href="#meres">Mérő</a><a href="#szabaly">Szabályok</a></nav></div></header>
+
+<main>
+<section class="hero">
+<span class="badge">100% szatíra · 0% személyes támadás</span>
+<h1>NEKED IS<br><span>TÚL SOK</span><br>A CLICKBAIT?</h1>
+<p>A RoastTube a YouTube-klisék ellen harcol. Írd be egy videó címét, és nézd meg, mennyire ordít róla a „EZT NEM HISZED EL!!!” energia.</p>
+<div class="buttons"><a class="btn primary" href="#roast">🔥 Indítsd a roastot</a><a class="btn secondary" href="#meres">📊 Mérő megtekintése</a></div>
+</section>
+
+<section id="roast">
+<div class="head"><h2>Roast-gép</h2><p>Nem embereket támadunk — a kliséket pörköljük meg.</p></div>
+<div class="roastbox">
+<div class="inputs"><input id="title" placeholder="Írd be a videó címét… pl. „24 ÓRÁIG CSAK PIROSAT ETTEEM!!!”"><button class="primary" onclick="roast()">ROAST 🔥</button></div>
+<div class="result" id="result"><strong id="headline"></strong><p id="copy"></p><div class="meter"><i id="meter"></i></div></div>
+</div>
+</section>
+
+<section id="meres">
+<div class="head"><h2>Clickbait-mérő</h2><p>Fiktív példaértékek — csak a poén kedvéért.</p></div>
+<div class="roastbox">
+<div class="rank"><span class="num">01</span><div><span class="name">„EZT NEM HISZED EL!!!”</span><div class="bar"><i style="width:98%"></i></div></div><span class="score">98%</span></div>
+<div class="rank"><span class="num">02</span><div><span class="name">„MEGVÁLTOZTATTA AZ ÉLETEM 😱”</span><div class="bar"><i style="width:91%"></i></div></div><span class="score">91%</span></div>
+<div class="rank"><span class="num">03</span><div><span class="name">„Az utolsó rész DURVA…”</span><div class="bar"><i style="width:84%"></i></div></div><span class="score">84%</span></div>
+<div class="rank"><span class="num">04</span><div><span class="name">„Őszintén beszélek mindenről.”</span><div class="bar"><i style="width:72%"></i></div></div><span class="score">72%</span></div>
+</div>
+</section>
+
+<section>
+<div class="head"><h2>A klasszikusok.</h2><p>Ha YouTube-oztál már öt percnél tovább, ezeket láttad.</p></div>
+<div class="cards">
+<div class="card"><div class="icon">😱</div><h3>Az örök „DÖBBENET”</h3><p>Három felkiáltójel, két emoji és egy arc, amitől úgy tűnik, mintha épp felfedezte volna a tüzet.</p></div>
+<div class="card"><div class="icon">💸</div><h3>A szponzorblokk</h3><p>„De előtte egy nagyon fontos dolog…” — és 90 másodperccel később még mindig nem tudod, mi volt a videó témája.</p></div>
+<div class="card"><div class="icon">👀</div><h3>A titokzatos thumbnail</h3><p>Nyíl. Kör. Vörös karika. Meglepett arc. Valaki mutat valamire, amit a videóban majd talán egyszer meglátsz.</p></div>
+</div>
+<div class="quote"><b>RoastTube szabály:</b> a poén a tartalomgyártási klisékről szól, nem arról, hogy valós személyekről hamis dolgokat állítsunk.</div>
+</section>
+</main>
+
+<footer>ROASTUBE © 2026 · Szatirikus, fiktív oldal · Nem áll kapcsolatban a YouTube-bal.</footer>
+
+<script>
+function roast(){
+ const t=document.getElementById('title').value.trim();
+ const r=document.getElementById('result'), h=document.getElementById('headline'), c=document.getElementById('copy'), m=document.getElementById('meter');
+ if(!t){h.textContent='Adj egy címet, amit meg lehet pörkölni.';c.textContent='';r.style.display='block';m.style.width='0';return}
+ let score=35;
+ if(/[!?]{2,}/.test(t)) score+=18;
+ if(/nem hiszed|durva|titok|titkos|MEGVÁLTOZTAT|24 ór|millió|sokk|őrület|😱|!!!/i.test(t)) score+=25;
+ if(t.length>45) score+=10;
+ score=Math.min(score,99);
+ const lines=[
+   'Ez a cím úgy néz ki, mintha a thumbnail írta volna.',
+   'A clickbait-detektor épp kávét kér. Ez kemény volt.',
+   'Nyugodtan lélegezz. Nem kell ennyi felkiáltójel egy videóhoz.',
+   'A cím alapján legalább három piros nyíl várható.',
+   'Ez nem cím. Ez egy segélykiáltás az algoritmusnak.'
+ ];
+ h.textContent=`🔥 Clickbait-szint: ${score}%`;
+ c.textContent=lines[Math.floor(Math.random()*lines.length)];
+ r.style.display='block';m.style.width=score+'%';
+}
+</script>
+</body>
+</html>
